@@ -28,3 +28,4 @@ admin/i18n
 maintenance/**
 
 test/tsconfig.json
+tsconfig.json
