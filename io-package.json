@@ -1,0 +1,76 @@
+{
+    "common": {
+        "name": "palazzetti",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "palazzetti",
+        "titleLang": {
+            "en": "palazzetti",
+            "de": "Palazzetti",
+            "ru": "Palazzetti",
+            "pt": "palazzetti",
+            "nl": "Palazzetti",
+            "fr": "palazzetti",
+            "it": "Palazzetti",
+            "es": "palazzetti",
+            "pl": "palazzetti",
+            "zh-cn": "宫殿"
+        },
+        "desc": {
+            "en": "palazzetti pellet furnace",
+            "de": "Palazzetti Pelletofen",
+            "ru": "Палаццетти пеллетная печь",
+            "pt": "forno de pelotas palazzetti",
+            "nl": "Palazzetti pelletoven",
+            "fr": "four à granulés palazzetti",
+            "it": "forno a pellet palazzetti",
+            "es": "horno de pellets palazzetti",
+            "pl": "piec na pelety palazzetti",
+            "zh-cn": "palazzetti颗粒炉"
+        },
+        "authors": [
+            "inapsis <info@inapsis.net>"
+        ],
+        "keywords": [
+            "ioBroker",
+            "template",
+            "Smart Home",
+            "home automation"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "palazzetti.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/inapsis/ioBroker.palazzetti/master/admin/palazzetti.png",
+        "readme": "https://github.com/inapsis/ioBroker.palazzetti/blob/master/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "climate-control",
+        "compact": true,
+        "materialize": true,
+        "dependencies": [{
+            "js-controller": ">=1.4.2"
+        }]
+    },
+    "native": {
+        "ipAddress": "",
+        "port": "80",
+        "polltime": 60
+    },
+    "objects": [],
+    "instanceObjects": []
+}
