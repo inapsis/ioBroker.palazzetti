@@ -1,6 +1,6 @@
 {
     "common": {
-        "name": "palazzetti",
+        "name": "",
         "version": "0.0.1",
         "news": {
             "0.0.1": {
@@ -48,7 +48,8 @@
             "ioBroker",
             "template",
             "Smart Home",
-            "home automation"
+            "home automation",
+            "palazzetti"
         ],
         "license": "MIT",
         "platform": "Javascript/Node.js",
