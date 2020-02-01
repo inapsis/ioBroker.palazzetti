@@ -6,7 +6,7 @@
         "name": "inapsis",
         "email": "info@inapsis.net"
     },
-    "homepage": "https://github.com/inapsis/iobroker.palazzetti/blob/master/README.md",
+    "homepage": "https://github.com/inapsis/ioBroker.palazzetti/blob/master/README.md",
     "license": "MIT",
     "keywords": [
         "ioBroker",
@@ -16,7 +16,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/inapsis/iobroker.palazzetti.git"
+        "url": "https://github.com/inapsis/ioBroker.palazzetti.git"
     },
     "dependencies": {
         "@iobroker/adapter-core": "^2.1.0",
@@ -52,7 +52,7 @@
         "lint": "eslint"
     },
     "bugs": {
-        "url": "https://github.com/inapsis/iobroker.palazzetti/issues"
+        "url": "https://github.com/inapsis/ioBroker.palazzetti/issues"
     },
     "readmeFilename": "README.md"
 }
