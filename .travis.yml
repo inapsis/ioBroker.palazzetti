@@ -12,8 +12,6 @@ script:
   # Make sure the code is good
   - npm run lint
   # and it builds
-  - npm run build
-  # Now perform a test run
   - npm test
 
 notifications:
