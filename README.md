@@ -12,15 +12,18 @@
 
 ## palazzetti adapter for ioBroker
 
-Control palazzetti pellet stove connected to connection box.
+__Control palazzetti pellet stove connected to connection box.__
 
-Object Channels:
-    control:    properties to control stove 
-    get:        current stove data
-    info:       device information
-    timer:      timer settings
+__Object Channels:__
+* control:    properties to control stove 
+* get:        current stove data
+* info:       device information
+* timer:      timer settings
 
 ## Changelog
+
+### 0.0.2
+* (inapsis) some minor updates
 
 ### 0.0.1
 * (inapsis) initial release
