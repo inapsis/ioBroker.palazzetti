@@ -22,6 +22,9 @@ __Object Channels:__
 
 ## Changelog
 
+### 0.0.3
+* (inapsis) translations added
+
 ### 0.0.2
 * (inapsis) some minor updates
 
