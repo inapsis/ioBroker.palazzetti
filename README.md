@@ -12,7 +12,7 @@
 
 ## palazzetti adapter for ioBroker
 
-__Control palazzetti pellet stove connected to connection box.__
+__Control [palazzetti pellet stove](https://palazzettigroup.com/products/pellet-stoves/) connected to connection box.__
 
 __Object Channels:__
 * control:    properties to control stove 
