@@ -1,16 +1,5 @@
 exports.Objects = function(adapter) {
 
-    adapter.setObjectAsync("timer", {
-        type: "channel",
-        common: {
-            name: "timer",
-            type: "string",
-            role: "info",
-            desc: "timer channel"
-        },
-        native: {},
-    });
-
     adapter.setObjectAsync("timer.p1", {
         type: "state",
         common: {

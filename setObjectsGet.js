@@ -1,22 +1,11 @@
 exports.Objects = function(adapter) {
 
-    adapter.setObjectAsync("get", {
-        type: "channel",
-        common: {
-            name: "get",
-            type: "string",
-            role: "info",
-            desc: "get data channel"
-        },
-        native: {},
-    });
-
     adapter.setObjectAsync("get.aplwday", {
         type: "state",
         common: {
             name: "get.aplwday",
             type: "number",
-            role: "state",
+            role: "dayofweek",
             desc: "week day",
             read: true,
             write: false
@@ -29,7 +18,7 @@ exports.Objects = function(adapter) {
         common: {
             name: "get.aplwdayLabel",
             type: "string",
-            role: "state",
+            role: "dayofweek",
             desc: "week day label",
             read: true,
             write: false
@@ -42,7 +31,7 @@ exports.Objects = function(adapter) {
         common: {
             name: "get.status",
             type: "number",
-            role: "state",
+            role: "info.status",
             desc: "current status",
             read: true,
             write: false
@@ -55,7 +44,7 @@ exports.Objects = function(adapter) {
         common: {
             name: "get.statusLabel",
             type: "string",
-            role: "state",
+            role: "info.status",
             desc: "current status label",
             read: true,
             write: false
@@ -81,7 +70,7 @@ exports.Objects = function(adapter) {
         common: {
             name: "get.t1",
             type: "number",
-            role: "state",
+            role: "value.temperature",
             desc: "temperature room",
             read: true,
             write: false
@@ -94,7 +83,7 @@ exports.Objects = function(adapter) {
         common: {
             name: "get.t2",
             type: "number",
-            role: "state",
+            role: "value.temperature",
             desc: "temperature t2",
             read: true,
             write: false
@@ -107,7 +96,7 @@ exports.Objects = function(adapter) {
         common: {
             name: "get.t3",
             type: "number",
-            role: "state",
+            role: "value.temperature",
             desc: "temperature exhaust",
             read: true,
             write: false
@@ -120,7 +109,7 @@ exports.Objects = function(adapter) {
         common: {
             name: "get.t4",
             type: "number",
-            role: "state",
+            role: "value.temperature",
             desc: "temperature t4",
             read: true,
             write: false
@@ -133,7 +122,7 @@ exports.Objects = function(adapter) {
         common: {
             name: "get.t5",
             type: "number",
-            role: "state",
+            role: "value.temperature",
             desc: "temperature t5",
             read: true,
             write: false
@@ -146,7 +135,7 @@ exports.Objects = function(adapter) {
         common: {
             name: "get.pqt",
             type: "number",
-            role: "state",
+            role: "value",
             desc: "pellet quantity",
             read: true,
             write: false
@@ -279,7 +268,7 @@ exports.Objects = function(adapter) {
         common: {
             name: "get.chrstatus",
             type: "number",
-            role: "state",
+            role: "value",
             desc: "chrono status",
             read: true,
             write: false
@@ -292,7 +281,7 @@ exports.Objects = function(adapter) {
         common: {
             name: "get.chrstatusLabel",
             type: "string",
-            role: "state",
+            role: "value",
             desc: "chrono status label",
             read: true,
             write: false

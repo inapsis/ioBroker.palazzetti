@@ -62,6 +62,8 @@
         "type": "climate-control",
         "compact": true,
         "materialize": true,
+        "connectionType": "local",
+        "dataSource": "poll",
         "dependencies": [{
             "js-controller": ">=1.4.2"
         }]
@@ -72,5 +74,44 @@
         "polltime": 60
     },
     "objects": [],
-    "instanceObjects": []
+    "instanceObjects": [{
+        "_id": "info",
+        "type": "channel",
+        "common": {
+            "name": "info",
+            "type": "string",
+            "role": "info"
+        },
+        "native": {}
+    }, {
+        "_id": "get",
+        "type": "channel",
+        "common": {
+            "name": "get",
+            "type": "string",
+            "role": "info",
+            "desc": "get data channel"
+        },
+        "native": {}
+    }, {
+        "_id": "control",
+        "type": "channel",
+        "common": {
+            "name": "control",
+            "type": "string",
+            "role": "info",
+            "desc": "control channel"
+        },
+        "native": {}
+    }, {
+        "_id": "timer",
+        "type": "channel",
+        "common": {
+            "name": "timer",
+            "type": "string",
+            "role": "info",
+            "desc": "timer channel"
+        },
+        "native": {}
+    }]
 }

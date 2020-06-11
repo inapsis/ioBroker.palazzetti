@@ -1,16 +1,5 @@
 exports.Objects = function(adapter) {
 
-    adapter.setObjectAsync("control", {
-        type: "channel",
-        common: {
-            name: "control",
-            type: "string",
-            role: "info",
-            desc: "control channel"
-        },
-        native: {},
-    });
-
     adapter.setObjectAsync("control.pwr", {
         type: "state",
         common: {

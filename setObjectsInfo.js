@@ -1,15 +1,5 @@
 exports.Objects = function(adapter) {
 
-    adapter.setObjectAsync("info", {
-        type: "channel",
-        common: {
-            name: "info",
-            type: "string",
-            role: "info"
-        },
-        native: {},
-    });
-
     adapter.setObjectAsync("info.model", {
         type: "state",
         common: {
