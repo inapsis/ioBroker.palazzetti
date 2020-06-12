@@ -190,6 +190,20 @@
                 "write": false
             },
             "native": {}
+        },
+        {
+            "_id": "get.aplwday",
+            "type": "state",
+            "common": {
+                "name": "get.aplwday",
+                "type": "number",
+                "role": "dayofweek",
+                "desc": "week day",
+                "states": { "1": "Monday", "2": "Tuesday", "3": "Wednesday", "4": "Thursday", "5": "Friday", "6": "Suterday", "7": "Sunday" },
+                "read": true,
+                "write": false
+            },
+            "native": {}
         }
     ]
 }

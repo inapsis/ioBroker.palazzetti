@@ -7,19 +7,7 @@ exports.Objects = function(adapter) {
             type: "number",
             role: "dayofweek",
             desc: "week day",
-            read: true,
-            write: false
-        },
-        native: {},
-    });
-
-    adapter.setObjectAsync("get.aplwdayLabel", {
-        type: "state",
-        common: {
-            name: "get.aplwdayLabel",
-            type: "string",
-            role: "dayofweek",
-            desc: "week day label",
+            states: { "1": "Monday", "2": "Tuesday", "3": "Wednesday", "4": "Thursday", "5": "Friday", "6": "Suterday", "7": "Sunday" },
             read: true,
             write: false
         },
