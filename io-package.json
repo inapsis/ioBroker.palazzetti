@@ -145,7 +145,7 @@
             "common": {
                 "name": "info.mac",
                 "type": "string",
-                "role": "state",
+                "role": "info.mac",
                 "desc": "device mac address",
                 "read": true,
                 "write": false
