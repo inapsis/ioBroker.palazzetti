@@ -132,7 +132,7 @@
             "common": {
                 "name": "info.aplts",
                 "type": "string",
-                "role": "date",
+                "role": "info.display",
                 "desc": "device current date",
                 "read": true,
                 "write": false
