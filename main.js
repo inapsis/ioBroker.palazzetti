@@ -51,7 +51,6 @@ class Palazzetti extends utils.Adapter {
             port: this.config.port
         });
 
-        await setObjectsGet.Objects(this);
         await setObjectsControl.Objects(this);
         await setObjectsTimer.Objects(this);
 
@@ -91,7 +90,6 @@ class Palazzetti extends utils.Adapter {
             //this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
             switch (id) {
                 case instanceName + ".control.f2l":
-                    setObjectsGet.StateF2lLabel(this, state.val);
                     if (!state.ack && state.val >= 0 && state.val <= 7) {
                         this.palazzettiRequest.setCommand("RFAN+" + String(state.val)).then(function(result) {
                             this.log.info("set fan level: " + JSON.stringify(result));
@@ -108,15 +106,6 @@ class Palazzetti extends utils.Adapter {
                             this.log.error(err);
                         }.bind(this));
                     }
-                    break;
-                case instanceName + ".get.aplwday":
-                    setObjectsGet.StateAplwdayLabel(this, state.val);
-                    break;
-                case instanceName + ".get.status":
-                    setObjectsGet.StateStatusLabel(this, state.val);
-                    break;
-                case instanceName + ".get.chrstatus":
-                    setObjectsGet.StateChronoStatusLabel(this, state.val);
                     break;
                 case instanceName + ".control.pwr":
                     if (!state.ack && state.val >= 0 && state.val <= 5) {

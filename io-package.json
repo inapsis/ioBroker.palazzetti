@@ -185,7 +185,7 @@
                 "name": "info.mbtype",
                 "type": "number",
                 "role": "info.display",
-                "desc": "device model type",
+                "desc": "device main board",
                 "read": true,
                 "write": false
             },
@@ -200,6 +200,239 @@
                 "role": "dayofweek",
                 "desc": "week day",
                 "states": { "1": "Monday", "2": "Tuesday", "3": "Wednesday", "4": "Thursday", "5": "Friday", "6": "Suterday", "7": "Sunday" },
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "get.status",
+            "type": "state",
+            "common": {
+                "name": "get.status",
+                "type": "number",
+                "role": "info.status",
+                "desc": "current status",
+                "states": { "0": "Off", "1": "Off Timer", "2": "Test Fire", "3": "Heat Up", "4": "Fuel Ign", "5": "Ign Test", "6": "Burning", "9": "Cool Fluid", "10": "Fire Stop", "11": "Clean Fire", "12": "Cool" },
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "get.fdr",
+            "type": "state",
+            "common": {
+                "name": "get.fdr",
+                "type": "number",
+                "role": "value",
+                "desc": "feed rate",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "get.t1",
+            "type": "state",
+            "common": {
+                "name": "get.t1",
+                "type": "number",
+                "role": "value.temperature",
+                "desc": "temperature room",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "get.t2",
+            "type": "state",
+            "common": {
+                "name": "get.t2",
+                "type": "number",
+                "role": "value.temperature",
+                "desc": "temperature t2",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "get.t3",
+            "type": "state",
+            "common": {
+                "name": "get.t3",
+                "type": "number",
+                "role": "value.temperature",
+                "desc": "temperature exhaust",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "get.t4",
+            "type": "state",
+            "common": {
+                "name": "get.t4",
+                "type": "number",
+                "role": "value.temperature",
+                "desc": "temperature t4",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "get.t5",
+            "type": "state",
+            "common": {
+                "name": "get.t5",
+                "type": "number",
+                "role": "value.temperature",
+                "desc": "temperature t5",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "get.pqt",
+            "type": "state",
+            "common": {
+                "name": "get.pqt",
+                "type": "number",
+                "role": "value",
+                "desc": "pellet quantity",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "get.in",
+            "type": "state",
+            "common": {
+                "name": "get.in",
+                "type": "number",
+                "role": "value",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "get.out",
+            "type": "state",
+            "common": {
+                "name": "get.out",
+                "type": "number",
+                "role": "value",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "get.f1v",
+            "type": "state",
+            "common": {
+                "name": "get.f1v",
+                "type": "number",
+                "role": "value.valve",
+                "desc": "fan 1 valve level",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "get.f2v",
+            "type": "state",
+            "common": {
+                "name": "get.f2v",
+                "type": "number",
+                "role": "value.valve",
+                "desc": "fan 2 valve level",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "get.f2lf",
+            "type": "state",
+            "common": {
+                "name": "get.f2lf",
+                "type": "number",
+                "role": "value.valve",
+                "desc": "fan 2 valve level formated",
+                "states": { "0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "High", "7": "Auto" },
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "get.chrstatus",
+            "type": "state",
+            "common": {
+                "name": "get.chrstatus",
+                "type": "number",
+                "role": "value",
+                "desc": "chrono status",
+                "states": { "0": "Timer Off", "1": "Timer On" },
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "get.pump",
+            "type": "state",
+            "common": {
+                "name": "get.pump",
+                "type": "number",
+                "role": "value",
+                "desc": "pump speed",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "get.f1rpm",
+            "type": "state",
+            "common": {
+                "name": "get.f1rpm",
+                "type": "number",
+                "role": "value",
+                "desc": "fan 1 rpm",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "get.dpt",
+            "type": "state",
+            "common": {
+                "name": "get.dpt",
+                "type": "number",
+                "role": "value",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "get.dp",
+            "type": "state",
+            "common": {
+                "name": "get.dp",
+                "type": "number",
+                "role": "value",
                 "read": true,
                 "write": false
             },
