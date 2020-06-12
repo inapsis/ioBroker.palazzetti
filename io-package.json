@@ -75,43 +75,121 @@
     },
     "objects": [],
     "instanceObjects": [{
-        "_id": "info",
-        "type": "channel",
-        "common": {
-            "name": "info",
-            "type": "string",
-            "role": "info"
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "info",
+                "type": "string",
+                "role": "info"
+            },
+            "native": {}
+        }, {
+            "_id": "get",
+            "type": "channel",
+            "common": {
+                "name": "get",
+                "type": "string",
+                "role": "info",
+                "desc": "get data channel"
+            },
+            "native": {}
+        }, {
+            "_id": "control",
+            "type": "channel",
+            "common": {
+                "name": "control",
+                "type": "string",
+                "role": "info",
+                "desc": "control channel"
+            },
+            "native": {}
+        }, {
+            "_id": "timer",
+            "type": "channel",
+            "common": {
+                "name": "timer",
+                "type": "string",
+                "role": "info",
+                "desc": "timer channel"
+            },
+            "native": {}
         },
-        "native": {}
-    }, {
-        "_id": "get",
-        "type": "channel",
-        "common": {
-            "name": "get",
-            "type": "string",
-            "role": "info",
-            "desc": "get data channel"
+        {
+            "_id": "info.model",
+            "type": "state",
+            "common": {
+                "name": "info.model",
+                "type": "string",
+                "role": "info.display",
+                "desc": "device model",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        }, {
+            "_id": "info.aplts",
+            "type": "state",
+            "common": {
+                "name": "info.aplts",
+                "type": "string",
+                "role": "date",
+                "desc": "device current date",
+                "read": true,
+                "write": false
+            },
+            "native": {}
         },
-        "native": {}
-    }, {
-        "_id": "control",
-        "type": "channel",
-        "common": {
-            "name": "control",
-            "type": "string",
-            "role": "info",
-            "desc": "control channel"
+        {
+            "_id": "info.mac",
+            "type": "state",
+            "common": {
+                "name": "info.mac",
+                "type": "string",
+                "role": "state",
+                "desc": "device mac address",
+                "read": true,
+                "write": false
+            },
+            "native": {}
         },
-        "native": {}
-    }, {
-        "_id": "timer",
-        "type": "channel",
-        "common": {
-            "name": "timer",
-            "type": "string",
-            "role": "info",
-            "desc": "timer channel"
+        {
+            "_id": "info.fwdate",
+            "type": "state",
+            "common": {
+                "name": "info.fwdate",
+                "type": "string",
+                "role": "date",
+                "desc": "device firmware date",
+                "read": true,
+                "write": false
+            },
+            "native": {}
         },
-        "native": {}
-    }]
+        {
+            "_id": "info.ver",
+            "type": "state",
+            "common": {
+                "name": "info.ver",
+                "type": "string",
+                "role": "info.display",
+                "desc": "device version",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.mbtype",
+            "type": "state",
+            "common": {
+                "name": "info.mbtype",
+                "type": "number",
+                "role": "info.display",
+                "desc": "device model type",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        }
+    ]
 }

@@ -5,7 +5,7 @@ exports.Objects = function(adapter) {
         common: {
             name: "control.pwr",
             type: "number",
-            role: "state",
+            role: "level.valve",
             desc: "fire power",
             read: true,
             write: true
@@ -18,7 +18,7 @@ exports.Objects = function(adapter) {
         common: {
             name: "control.f2l",
             type: "number",
-            role: "state",
+            role: "level.valve",
             desc: "fan level",
             read: true,
             write: true
@@ -31,7 +31,7 @@ exports.Objects = function(adapter) {
         common: {
             name: "control.setp",
             type: "number",
-            role: "state",
+            role: "level.temperature",
             desc: "set point",
             read: true,
             write: true
@@ -43,8 +43,8 @@ exports.Objects = function(adapter) {
         type: "state",
         common: {
             name: "control.onoff",
-            type: "bool",
-            role: "state",
+            type: "boolean",
+            role: "switch.power",
             desc: "power on/off",
             read: true,
             write: true
