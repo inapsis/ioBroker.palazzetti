@@ -143,6 +143,7 @@ Palazzetti.prototype.updateState = function() {
 
     Promise.all(aRequests).then(
         function(result) {
+            this.log.info(JSON.stringify(result));
             setObjectsInfo.State(this, result[0]);
             setObjectsGet.State(this, result[0]);
             setObjectsControl.State(this, result[0]);
