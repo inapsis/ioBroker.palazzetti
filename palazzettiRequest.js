@@ -38,6 +38,10 @@ PalazzettiRequest.prototype.getTimer = function() {
     return this._request('GET+CHRD');
 };
 
+PalazzettiRequest.prototype.getLabel = function() {
+    return this._request('GET+LABL');
+};
+
 PalazzettiRequest.prototype.setCommand = function(command) {
     return this._request('SET+' + command);
 };

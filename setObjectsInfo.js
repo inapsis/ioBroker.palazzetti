@@ -5,4 +5,5 @@ exports.State = function(adapter, obj) {
     adapter.setStateAsync("info.fwdate", obj.DATA.FWDATE, true);
     adapter.setStateAsync("info.ver", obj.DATA.VER, true);
     adapter.setStateAsync("info.mbtype", obj.DATA.MBTYPE, true);
+    adapter.setStateAsync("info.name", obj.DATA.LABEL, true);
 };

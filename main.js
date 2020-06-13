@@ -137,6 +137,7 @@ Palazzetti.prototype.updateState = function() {
 
     let aRequests = [
         this.palazzettiRequest.getAlls(),
+        this.palazzettiRequest.getLabel(),
         this.palazzettiRequest.getTimer()
     ]
 

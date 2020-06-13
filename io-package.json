@@ -192,6 +192,19 @@
             "native": {}
         },
         {
+            "_id": "info.name",
+            "type": "state",
+            "common": {
+                "name": "info.name",
+                "type": "number",
+                "role": "info.name",
+                "desc": "device name",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
             "_id": "get.aplwday",
             "type": "state",
             "common": {
