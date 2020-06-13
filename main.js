@@ -51,8 +51,6 @@ class Palazzetti extends utils.Adapter {
             port: this.config.port
         });
 
-        await setObjectsTimer.Objects(this);
-
         this.subscribeStates("*");
 
         this.updateState();

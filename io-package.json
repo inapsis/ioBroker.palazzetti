@@ -199,7 +199,7 @@
                 "type": "number",
                 "role": "dayofweek",
                 "desc": "week day",
-                "states": { "1": "Monday", "2": "Tuesday", "3": "Wednesday", "4": "Thursday", "5": "Friday", "6": "Suterday", "7": "Sunday" },
+                "states": { "1": "Monday", "2": "Tuesday", "3": "Wednesday", "4": "Thursday", "5": "Friday", "6": "Saturday", "7": "Sunday" },
                 "read": true,
                 "write": false
             },
@@ -509,6 +509,175 @@
                 "desc": "power on/off",
                 "read": true,
                 "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.p1",
+            "type": "state",
+            "common": {
+                "name": "timer.p1",
+                "type": "string",
+                "role": "json",
+                "desc": "timer program 1",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.p2",
+            "type": "state",
+            "common": {
+                "name": "timer.p2",
+                "type": "string",
+                "role": "json",
+                "desc": "timer program 2",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.p3",
+            "type": "state",
+            "common": {
+                "name": "timer.p3",
+                "type": "string",
+                "role": "json",
+                "desc": "timer program 3",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.p4",
+            "type": "state",
+            "common": {
+                "name": "timer.p4",
+                "type": "string",
+                "role": "json",
+                "desc": "timer program 4",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.p5",
+            "type": "state",
+            "common": {
+                "name": "timer.p5",
+                "type": "string",
+                "role": "json",
+                "desc": "timer program 5",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.p6",
+            "type": "state",
+            "common": {
+                "name": "timer.p6",
+                "type": "string",
+                "role": "json",
+                "desc": "timer program 6",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.d1",
+            "type": "state",
+            "common": {
+                "name": "timer.d1",
+                "type": "string",
+                "role": "json",
+                "desc": "timer Monday",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.d2",
+            "type": "state",
+            "common": {
+                "name": "timer.d2",
+                "type": "string",
+                "role": "json",
+                "desc": "timer Tuesday",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.d3",
+            "type": "state",
+            "common": {
+                "name": "timer.d3",
+                "type": "string",
+                "role": "json",
+                "desc": "timer Wednesday",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.d4",
+            "type": "state",
+            "common": {
+                "name": "timer.d4",
+                "type": "string",
+                "role": "json",
+                "desc": "timer Thursday",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.d5",
+            "type": "state",
+            "common": {
+                "name": "timer.d5",
+                "type": "string",
+                "role": "json",
+                "desc": "timer Friday",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.d6",
+            "type": "state",
+            "common": {
+                "name": "timer.d6",
+                "type": "string",
+                "role": "json",
+                "desc": "timer Saturday",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.d7",
+            "type": "state",
+            "common": {
+                "name": "timer.d7",
+                "type": "string",
+                "role": "json",
+                "desc": "timer Sunday",
+                "read": true,
+                "write": false
             },
             "native": {}
         }
