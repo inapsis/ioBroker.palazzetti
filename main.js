@@ -137,14 +137,14 @@ Palazzetti.prototype.updateState = function() {
 
     let aRequests = [
         this.palazzettiRequest.getAlls(),
-        this.palazzettiRequest.getLabel(),
-        this.palazzettiRequest.getTimer()
+        this.palazzettiRequest.getTimer(),
+        this.palazzettiRequest.getLabel()
     ]
 
     Promise.all(aRequests).then(
         function(result) {
-            this.log.info(JSON.stringify(result));
             setObjectsInfo.State(this, result[0]);
+            setObjectsInfo.State(this, result[2]);
             setObjectsGet.State(this, result[0]);
             setObjectsControl.State(this, result[0]);
             setObjectsTimer.State(this, result[1]);
