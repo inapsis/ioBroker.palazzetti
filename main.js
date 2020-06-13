@@ -146,7 +146,6 @@ Palazzetti.prototype.updateState = function() {
             setObjectsInfo.State(this, result[0]);
             setObjectsGet.State(this, result[0]);
             setObjectsControl.State(this, result[0]);
-
             setObjectsTimer.State(this, result[1]);
         }.bind(this)).catch(function(error) {
         this.log.error(error);
