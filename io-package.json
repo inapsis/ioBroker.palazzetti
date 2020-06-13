@@ -459,6 +459,58 @@
                 "write": false
             },
             "native": {}
+        },
+        {
+            "_id": "control.pwr",
+            "type": "state",
+            "common": {
+                "name": "control.pwr",
+                "type": "number",
+                "role": "level.valve",
+                "desc": "fire power",
+                "read": true,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id": "control.f2l",
+            "type": "state",
+            "common": {
+                "name": "control.f2l",
+                "type": "number",
+                "role": "level.valve",
+                "desc": "fan level",
+                "read": true,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id": "control.setp",
+            "type": "state",
+            "common": {
+                "name": "control.setp",
+                "type": "number",
+                "role": "level.temperature",
+                "desc": "set point",
+                "read": true,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id": "control.onoff",
+            "type": "state",
+            "common": {
+                "name": "control.onoff",
+                "type": "boolean",
+                "role": "switch.power",
+                "desc": "power on/off",
+                "read": true,
+                "write": true
+            },
+            "native": {}
         }
     ]
 }
