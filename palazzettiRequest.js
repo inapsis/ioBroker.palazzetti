@@ -52,13 +52,7 @@ PalazzettiRequest.prototype.powerCommand = function(command) {
 
 /*
 todo commands
-CMD+ON 
-CMD+OFF
 GET+STDT
-GET+LABL
-GET+TIME
-
-tbd F1V = F!RPM
 */
 
 exports.PalazzettiRequest = PalazzettiRequest;
