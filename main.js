@@ -10,12 +10,12 @@ const utils = require("@iobroker/adapter-core");
 let pollingInterval;
 
 // Load your modules here, e.g.:
-var PalazzettiRequest = require('./palazzettiRequest').PalazzettiRequest;
+var PalazzettiRequest = require('./lib/palazzettiRequest').PalazzettiRequest;
 
-var setObjectsInfo = require('./setObjectsInfo');
-var setObjectsGet = require('./setObjectsGet');
-var setObjectsControl = require('./setObjectsControl');
-var setObjectsTimer = require('./setObjectsTimer');
+var setObjectsInfo = require('./lib/setObjectsInfo');
+var setObjectsGet = require('./lib/setObjectsGet');
+var setObjectsControl = require('./lib/setObjectsControl');
+var setObjectsTimer = require('./lib/setObjectsTimer');
 // const fs = require("fs");
 
 class Palazzetti extends utils.Adapter {
