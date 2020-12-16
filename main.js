@@ -108,6 +108,7 @@ class Palazzetti extends utils.Adapter {
                         if (!state.ack && state.val >= 0 && state.val <= 5) {
                             this.palazzettiRequest.setCommand("POWR+" + String(state.val)).then(function(result) {
                                 this.log.info("set power: " + JSON.stringify(result));
+                                this.updateState();
                             }.bind(this)).catch(function(err) {
                                 this.log.error(err);
                             }.bind(this));
@@ -117,6 +118,7 @@ class Palazzetti extends utils.Adapter {
                         if (!state.ack && state.val !== null) {
                             this.palazzettiRequest.powerCommand(state.val === false ? 'OFF' : 'ON').then(function(result) {
                                 this.log.info("set on/off: " + JSON.stringify(result));
+                                this.updateState();
                             }.bind(this)).catch(function(err) {
                                 this.log.error(err);
                             }.bind(this));
@@ -137,7 +139,7 @@ class Palazzetti extends utils.Adapter {
 }
 
 Palazzetti.prototype.updateState = function() {
-
+    this.log.info("Start Get Result");
     let aRequests = [
         this.palazzettiRequest.getAlls(),
         this.palazzettiRequest.getTimer(),
