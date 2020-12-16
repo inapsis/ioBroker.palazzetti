@@ -12,14 +12,10 @@ let pollingInterval;
 // Load your modules here, e.g.:
 var PalazzettiRequest = require('./lib/palazzettiRequest').PalazzettiRequest;
 
-var setObjectsInfo = require('./lib/setObjectsInfo');
-var setObjectsGet = require('./lib/setObjectsGet');
-var setObjectsControl = require('./lib/setObjectsControl');
-var setObjectsTimer = require('./lib/setObjectsTimer');
-// const fs = require("fs");
+var setObjectStates = require('./lib/palazzettiObjectStateMap');
+const { rejects } = require("assert");
 
 class Palazzetti extends utils.Adapter {
-
     /**
      * @param {Partial<ioBroker.AdapterOptions>} [options={}]
      */
@@ -81,56 +77,65 @@ class Palazzetti extends utils.Adapter {
      * @param {ioBroker.State | null | undefined} state
      */
     onStateChange(id, state) {
-        if (state) {
-            let instanceName = this.name + "." + this.instance;
-            // The state was changed
-            //this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
-            switch (id) {
-                case instanceName + ".control.f2l":
-                    if (!state.ack && state.val >= 0 && state.val <= 7) {
-                        this.palazzettiRequest.setCommand("RFAN+" + String(state.val)).then(function(result) {
-                            this.log.info("set fan level: " + JSON.stringify(result));
-                        }.bind(this)).catch(function(err) {
-                            this.log.error(err);
-                        }.bind(this));
-                    }
-                    break;
-                case instanceName + ".control.setp":
-                    if (!state.ack && state.val >= 0 && state.val <= 40) {
-                        this.palazzettiRequest.setCommand("SETP+" + String(state.val)).then(function(result) {
-                            this.log.info("set point: " + JSON.stringify(result));
-                        }.bind(this)).catch(function(err) {
-                            this.log.error(err);
-                        }.bind(this));
-                    }
-                    break;
-                case instanceName + ".control.pwr":
-                    if (!state.ack && state.val >= 0 && state.val <= 5) {
-                        this.palazzettiRequest.setCommand("POWR+" + String(state.val)).then(function(result) {
-                            this.log.info("set power: " + JSON.stringify(result));
-                        }.bind(this)).catch(function(err) {
-                            this.log.error(err);
-                        }.bind(this));
-                    }
-                    break;
-                case instanceName + ".control.onoff":
-                    if (!state.ack && state.val !== null) {
-                        this.palazzettiRequest.powerCommand(state.val === false ? 'OFF' : 'ON').then(function(result) {
-                            this.log.info("set on/off: " + JSON.stringify(result));
-                        }.bind(this)).catch(function(err) {
-                            this.log.error(err);
-                        }.bind(this));
-                    }
-                    break;
-                default:
-                    break;
-            }
-        } else {
-            // The state was deleted
-            this.log.info(`state ${id} deleted`);
-        }
-    }
+        try {
+            if (state) {
+                let instanceName = this.name + "." + this.instance;
+                // The state was changed
+                //this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
+                switch (id) {
+                    case instanceName + ".control.f2l":
+                        if (!state.ack && state.val >= 0 && state.val <= 7) {
+                            this.palazzettiRequest.setCommand("RFAN+" + String(state.val)).then(function(result) {
+                                this.log.info("set fan level: " + JSON.stringify(result));
+                                this.updateState();
 
+                            }.bind(this)).catch(function(err) {
+                                this.log.error(err);
+                            }.bind(this));
+                        }
+                        break;
+                    case instanceName + ".control.setp":
+                        if (!state.ack && state.val >= 0 && state.val <= 40) {
+                            this.palazzettiRequest.setCommand("SETP+" + String(state.val)).then(function(result) {
+                                this.log.info("set point: " + JSON.stringify(result));
+                                this.updateState();
+                            }.bind(this)).catch(function(err) {
+                                this.log.error(err);
+                            }.bind(this));
+                        }
+                        break;
+                    case instanceName + ".control.pwr":
+                        if (!state.ack && state.val >= 0 && state.val <= 5) {
+                            this.palazzettiRequest.setCommand("POWR+" + String(state.val)).then(function(result) {
+                                this.log.info("set power: " + JSON.stringify(result));
+                                this.updateState();
+                            }.bind(this)).catch(function(err) {
+                                this.log.error(err);
+                            }.bind(this));
+                        }
+                        break;
+                    case instanceName + ".control.onoff":
+                        if (!state.ack && state.val !== null) {
+                            this.palazzettiRequest.powerCommand(state.val === false ? 'OFF' : 'ON').then(function(result) {
+                                this.log.info("set on/off: " + JSON.stringify(result));
+                                this.updateState();
+                            }.bind(this)).catch(function(err) {
+                                this.log.error(err);
+                            }.bind(this));
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            } else {
+                // The state was deleted
+                this.log.info(`state ${id} deleted`);
+            }
+        } catch (e) {
+            this.log.error(e);
+        }
+
+    }
 }
 
 Palazzetti.prototype.updateState = function() {
@@ -143,11 +148,15 @@ Palazzetti.prototype.updateState = function() {
 
     Promise.all(aRequests).then(
         function(result) {
-            setObjectsInfo.State(this, result[0]);
-            setObjectsGet.State(this, result[0]);
-            setObjectsControl.State(this, result[0]);
-            setObjectsTimer.State(this, result[1]);
-            setObjectsInfo.StateLabel(this, result[2]);
+            try {
+                setObjectStates.StateInfo(this, result[0]);
+                setObjectStates.StateGet(this, result[0]);
+                setObjectStates.StateControl(this, result[0]);
+                setObjectStates.StateTimer(this, result[1]);
+                setObjectStates.StateLabel(this, result[2]);
+            } catch (err) {
+                this.log.error(err);
+            }
         }.bind(this)).catch(function(error) {
         this.log.error(error);
     }.bind(this));
