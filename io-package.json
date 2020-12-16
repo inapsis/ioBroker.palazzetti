@@ -3,6 +3,18 @@
         "name": "palazzetti",
         "version": "0.0.4",
         "news": {
+            "0.0.4": {
+                "en": "Minor update for code quality",
+                "de": "Kleinere Aktualisierung für die Codequalität",
+                "ru": "Незначительное обновление для качества кода",
+                "pt": "Pequena atualização para a qualidade do código",
+                "nl": "Kleine update voor codekwaliteit",
+                "fr": "Mise à jour mineure pour la qualité du code",
+                "it": "Aggiornamento minore per la qualità del codice",
+                "es": "Actualización menor para la calidad del código",
+                "pl": "Niewielka aktualizacja dotycząca jakości kodu",
+                "zh-cn": "较小的代码质量更新"
+            },
             "0.0.3": {
                 "en": "translations added",
                 "de": "Übersetzungen hinzugefügt",
