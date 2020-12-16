@@ -23,7 +23,7 @@
         "request": "*"
     },
     "devDependencies": {
-        "@iobroker/testing": "^2.0.1",
+        "@iobroker/testing": "^2.3.0",
         "@types/chai": "^4.2.7",
         "@types/chai-as-promised": "^7.1.2",
         "@types/gulp": "^4.0.6",
@@ -37,7 +37,7 @@
         "chai-as-promised": "^7.1.1",
         "eslint": "^6.8.0",
         "gulp": "^4.0.2",
-        "mocha": "^7.0.0",
+        "mocha": "^8.2.1",
         "nyc": "^15.1.0",
         "proxyquire": "^2.1.3",
         "should": "^13.2.3",
@@ -46,7 +46,7 @@
     },
     "main": "main.js",
     "scripts": {
-        "test:js": "mocha --opts test/mocha.custom.opts",
+        "test:js": "mocha --config test/mocharc.custom.json \"{!(node_modules|test)/**/*.test.js,*.test.js,test/**/test!(PackageFiles|Startup).js}\"",
         "test:package": "mocha test/package --exit",
         "test:unit": "nyc --reporter=html mocha test/unit --exit",
         "test:integration": "mocha test/integration --exit",
