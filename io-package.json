@@ -1,7 +1,7 @@
 {
     "common": {
         "name": "palazzetti",
-        "version": "0.0.3",
+        "version": "0.0.4",
         "news": {
             "0.0.3": {
                 "en": "translations added",
@@ -78,7 +78,7 @@
             "_id": "info",
             "type": "channel",
             "common": {
-                "name": "info",
+                "name": "Information",
                 "type": "string",
                 "role": "info"
             },
@@ -87,7 +87,7 @@
             "_id": "get",
             "type": "channel",
             "common": {
-                "name": "get",
+                "name": "Get Device Data",
                 "type": "string",
                 "role": "info",
                 "desc": "get data channel"
@@ -97,7 +97,7 @@
             "_id": "control",
             "type": "channel",
             "common": {
-                "name": "control",
+                "name": "Control Device",
                 "type": "string",
                 "role": "info",
                 "desc": "control channel"
@@ -107,7 +107,7 @@
             "_id": "timer",
             "type": "channel",
             "common": {
-                "name": "timer",
+                "name": "Timer Settings",
                 "type": "string",
                 "role": "info",
                 "desc": "timer channel"
@@ -118,7 +118,7 @@
             "_id": "info.model",
             "type": "state",
             "common": {
-                "name": "info.model",
+                "name": "Model",
                 "type": "string",
                 "role": "info.display",
                 "desc": "device model",
@@ -130,7 +130,7 @@
             "_id": "info.aplts",
             "type": "state",
             "common": {
-                "name": "info.aplts",
+                "name": "Current Date",
                 "type": "string",
                 "role": "info.display",
                 "desc": "device current date",
@@ -143,7 +143,7 @@
             "_id": "info.mac",
             "type": "state",
             "common": {
-                "name": "info.mac",
+                "name": "Mac Address",
                 "type": "string",
                 "role": "info.mac",
                 "desc": "device mac address",
@@ -156,7 +156,7 @@
             "_id": "info.fwdate",
             "type": "state",
             "common": {
-                "name": "info.fwdate",
+                "name": "Firmware Date",
                 "type": "string",
                 "role": "date",
                 "desc": "device firmware date",
@@ -169,7 +169,7 @@
             "_id": "info.ver",
             "type": "state",
             "common": {
-                "name": "info.ver",
+                "name": "Version",
                 "type": "string",
                 "role": "info.display",
                 "desc": "device version",
@@ -182,7 +182,7 @@
             "_id": "info.mbtype",
             "type": "state",
             "common": {
-                "name": "info.mbtype",
+                "name": "Main Board",
                 "type": "number",
                 "role": "info.display",
                 "desc": "device main board",
@@ -192,14 +192,27 @@
             "native": {}
         },
         {
+            "_id": "info.name",
+            "type": "state",
+            "common": {
+                "name": "Name",
+                "type": "string",
+                "role": "info.name",
+                "desc": "device name",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
             "_id": "get.aplwday",
             "type": "state",
             "common": {
-                "name": "get.aplwday",
+                "name": "Week Day",
                 "type": "number",
                 "role": "dayofweek",
                 "desc": "week day",
-                "states": { "1": "Monday", "2": "Tuesday", "3": "Wednesday", "4": "Thursday", "5": "Friday", "6": "Suterday", "7": "Sunday" },
+                "states": { "1": "Monday", "2": "Tuesday", "3": "Wednesday", "4": "Thursday", "5": "Friday", "6": "Saturday", "7": "Sunday" },
                 "read": true,
                 "write": false
             },
@@ -209,7 +222,7 @@
             "_id": "get.status",
             "type": "state",
             "common": {
-                "name": "get.status",
+                "name": "Status",
                 "type": "number",
                 "role": "info.status",
                 "desc": "current status",
@@ -245,7 +258,7 @@
             "_id": "get.fdr",
             "type": "state",
             "common": {
-                "name": "get.fdr",
+                "name": "Feed Rate",
                 "type": "number",
                 "role": "value",
                 "desc": "feed rate",
@@ -258,7 +271,7 @@
             "_id": "get.t1",
             "type": "state",
             "common": {
-                "name": "get.t1",
+                "name": "Temperature Room",
                 "type": "number",
                 "role": "value.temperature",
                 "desc": "temperature room",
@@ -271,7 +284,7 @@
             "_id": "get.t2",
             "type": "state",
             "common": {
-                "name": "get.t2",
+                "name": "Temperature Return",
                 "type": "number",
                 "role": "value.temperature",
                 "desc": "temperature t2",
@@ -284,7 +297,7 @@
             "_id": "get.t3",
             "type": "state",
             "common": {
-                "name": "get.t3",
+                "name": "Temperature Exhaust",
                 "type": "number",
                 "role": "value.temperature",
                 "desc": "temperature exhaust",
@@ -297,7 +310,7 @@
             "_id": "get.t4",
             "type": "state",
             "common": {
-                "name": "get.t4",
+                "name": "Temperature Multi Fire",
                 "type": "number",
                 "role": "value.temperature",
                 "desc": "temperature t4",
@@ -310,7 +323,7 @@
             "_id": "get.t5",
             "type": "state",
             "common": {
-                "name": "get.t5",
+                "name": "Temperature Accumulation",
                 "type": "number",
                 "role": "value.temperature",
                 "desc": "temperature t5",
@@ -323,10 +336,10 @@
             "_id": "get.pqt",
             "type": "state",
             "common": {
-                "name": "get.pqt",
+                "name": "Spent Pellets",
                 "type": "number",
                 "role": "value",
-                "desc": "pellet quantity",
+                "desc": "spent pellet quantity",
                 "read": true,
                 "write": false
             },
@@ -336,7 +349,7 @@
             "_id": "get.in",
             "type": "state",
             "common": {
-                "name": "get.in",
+                "name": "In",
                 "type": "number",
                 "role": "value",
                 "read": true,
@@ -348,7 +361,7 @@
             "_id": "get.out",
             "type": "state",
             "common": {
-                "name": "get.out",
+                "name": "Out",
                 "type": "number",
                 "role": "value",
                 "read": true,
@@ -360,7 +373,7 @@
             "_id": "get.f1v",
             "type": "state",
             "common": {
-                "name": "get.f1v",
+                "name": "Fan Exhaust",
                 "type": "number",
                 "role": "value.valve",
                 "desc": "fan 1 valve level",
@@ -373,7 +386,7 @@
             "_id": "get.f2v",
             "type": "state",
             "common": {
-                "name": "get.f2v",
+                "name": "Fan",
                 "type": "number",
                 "role": "value.valve",
                 "desc": "fan 2 valve level",
@@ -386,7 +399,7 @@
             "_id": "get.f2lf",
             "type": "state",
             "common": {
-                "name": "get.f2lf",
+                "name": "Fan Level",
                 "type": "number",
                 "role": "value.valve",
                 "desc": "fan 2 valve level formated",
@@ -400,10 +413,10 @@
             "_id": "get.chrstatus",
             "type": "state",
             "common": {
-                "name": "get.chrstatus",
+                "name": "Timer Status",
                 "type": "number",
                 "role": "value",
-                "desc": "chrono status",
+                "desc": "timer status",
                 "states": { "0": "Timer Off", "1": "Timer On" },
                 "read": true,
                 "write": false
@@ -414,7 +427,7 @@
             "_id": "get.pump",
             "type": "state",
             "common": {
-                "name": "get.pump",
+                "name": "Pump Speed",
                 "type": "number",
                 "role": "value",
                 "desc": "pump speed",
@@ -427,7 +440,7 @@
             "_id": "get.f1rpm",
             "type": "state",
             "common": {
-                "name": "get.f1rpm",
+                "name": "Fan Exhaust RPM",
                 "type": "number",
                 "role": "value",
                 "desc": "fan 1 rpm",
@@ -440,7 +453,7 @@
             "_id": "get.dpt",
             "type": "state",
             "common": {
-                "name": "get.dpt",
+                "name": "Air Pressure Set",
                 "type": "number",
                 "role": "value",
                 "read": true,
@@ -452,9 +465,230 @@
             "_id": "get.dp",
             "type": "state",
             "common": {
-                "name": "get.dp",
+                "name": "Air Pressure",
                 "type": "number",
                 "role": "value",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "control.pwr",
+            "type": "state",
+            "common": {
+                "name": "Power Fire Level",
+                "type": "number",
+                "role": "level.valve",
+                "desc": "fire power",
+                "read": true,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id": "control.f2l",
+            "type": "state",
+            "common": {
+                "name": "Fan Level",
+                "type": "number",
+                "role": "level.valve",
+                "desc": "fan level",
+                "read": true,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id": "control.setp",
+            "type": "state",
+            "common": {
+                "name": "Temperature Set Point",
+                "type": "number",
+                "role": "level.temperature",
+                "desc": "set point",
+                "read": true,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id": "control.onoff",
+            "type": "state",
+            "common": {
+                "name": "Turn Power On Off",
+                "type": "boolean",
+                "role": "switch.power",
+                "desc": "power on/off",
+                "read": true,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.p1",
+            "type": "state",
+            "common": {
+                "name": "Timer Program 1",
+                "type": "string",
+                "role": "json",
+                "desc": "timer program 1",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.p2",
+            "type": "state",
+            "common": {
+                "name": "Timer Program 2",
+                "type": "string",
+                "role": "json",
+                "desc": "timer program 2",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.p3",
+            "type": "state",
+            "common": {
+                "name": "Timer Program 3",
+                "type": "string",
+                "role": "json",
+                "desc": "timer program 3",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.p4",
+            "type": "state",
+            "common": {
+                "name": "Timer Program 4",
+                "type": "string",
+                "role": "json",
+                "desc": "timer program 4",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.p5",
+            "type": "state",
+            "common": {
+                "name": "Timer Program 5",
+                "type": "string",
+                "role": "json",
+                "desc": "timer program 5",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.p6",
+            "type": "state",
+            "common": {
+                "name": "Timer Program 6",
+                "type": "string",
+                "role": "json",
+                "desc": "timer program 6",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.d1",
+            "type": "state",
+            "common": {
+                "name": "Timer Monday",
+                "type": "string",
+                "role": "json",
+                "desc": "timer Monday",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.d2",
+            "type": "state",
+            "common": {
+                "name": "Timer Tuesday",
+                "type": "string",
+                "role": "json",
+                "desc": "timer Tuesday",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.d3",
+            "type": "state",
+            "common": {
+                "name": "Timer Wednesday3",
+                "type": "string",
+                "role": "json",
+                "desc": "timer Wednesday",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.d4",
+            "type": "state",
+            "common": {
+                "name": "Timer Thursday",
+                "type": "string",
+                "role": "json",
+                "desc": "timer Thursday",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.d5",
+            "type": "state",
+            "common": {
+                "name": "Timer Friday",
+                "type": "string",
+                "role": "json",
+                "desc": "timer Friday",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.d6",
+            "type": "state",
+            "common": {
+                "name": "Timer Saturday",
+                "type": "string",
+                "role": "json",
+                "desc": "timer Saturday",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "timer.d7",
+            "type": "state",
+            "common": {
+                "name": "Timer Sunday",
+                "type": "string",
+                "role": "json",
+                "desc": "timer Sunday",
                 "read": true,
                 "write": false
             },
