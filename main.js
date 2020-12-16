@@ -86,9 +86,8 @@ class Palazzetti extends utils.Adapter {
                     case instanceName + ".control.f2l":
                         if (!state.ack && state.val >= 0 && state.val <= 7) {
                             this.palazzettiRequest.setCommand("RFAN+" + String(state.val)).then(function(result) {
-                                this.log.info("set fan level: " + JSON.stringify(result));
+                                this.log.debug("set fan level: " + JSON.stringify(result));
                                 this.updateState();
-
                             }.bind(this)).catch(function(err) {
                                 this.log.error(err);
                             }.bind(this));
@@ -97,7 +96,7 @@ class Palazzetti extends utils.Adapter {
                     case instanceName + ".control.setp":
                         if (!state.ack && state.val >= 0 && state.val <= 40) {
                             this.palazzettiRequest.setCommand("SETP+" + String(state.val)).then(function(result) {
-                                this.log.info("set point: " + JSON.stringify(result));
+                                this.log.debug("set point: " + JSON.stringify(result));
                                 this.updateState();
                             }.bind(this)).catch(function(err) {
                                 this.log.error(err);
@@ -107,7 +106,7 @@ class Palazzetti extends utils.Adapter {
                     case instanceName + ".control.pwr":
                         if (!state.ack && state.val >= 0 && state.val <= 5) {
                             this.palazzettiRequest.setCommand("POWR+" + String(state.val)).then(function(result) {
-                                this.log.info("set power: " + JSON.stringify(result));
+                                this.log.debug("set power: " + JSON.stringify(result));
                                 this.updateState();
                             }.bind(this)).catch(function(err) {
                                 this.log.error(err);
@@ -117,7 +116,7 @@ class Palazzetti extends utils.Adapter {
                     case instanceName + ".control.onoff":
                         if (!state.ack && state.val !== null) {
                             this.palazzettiRequest.powerCommand(state.val === false ? 'OFF' : 'ON').then(function(result) {
-                                this.log.info("set on/off: " + JSON.stringify(result));
+                                this.log.debug("set on/off: " + JSON.stringify(result));
                                 this.updateState();
                             }.bind(this)).catch(function(err) {
                                 this.log.error(err);
@@ -129,7 +128,7 @@ class Palazzetti extends utils.Adapter {
                 }
             } else {
                 // The state was deleted
-                this.log.info(`state ${id} deleted`);
+                this.log.debug(`state ${id} deleted`);
             }
         } catch (e) {
             this.log.error(e);
@@ -139,7 +138,6 @@ class Palazzetti extends utils.Adapter {
 }
 
 Palazzetti.prototype.updateState = function() {
-    this.log.info("Start Get Result");
     let aRequests = [
         this.palazzettiRequest.getAlls(),
         this.palazzettiRequest.getTimer(),
@@ -154,7 +152,6 @@ Palazzetti.prototype.updateState = function() {
                 setObjectStates.StateControl(this, result[0]);
                 setObjectStates.StateTimer(this, result[1]);
                 setObjectStates.StateLabel(this, result[2]);
-                this.log.info("Get Result: " + JSON.stringify(result));
             } catch (err) {
                 this.log.error(err);
             }
