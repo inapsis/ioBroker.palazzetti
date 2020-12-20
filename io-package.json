@@ -465,7 +465,7 @@
             "_id": "get.dpt",
             "type": "state",
             "common": {
-                "name": "Air Pressure Set",
+                "name": "Target Pressure",
                 "type": "number",
                 "role": "value",
                 "read": true,
@@ -477,7 +477,7 @@
             "_id": "get.dp",
             "type": "state",
             "common": {
-                "name": "Air Pressure",
+                "name": "Delta Pressure",
                 "type": "number",
                 "role": "value",
                 "read": true,
