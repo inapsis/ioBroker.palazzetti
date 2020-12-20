@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "palazzetti",
-        "version": "0.0.4",
+        "version": "0.0.5",
         "news": {
+            "0.0.5": {
+                "en": "Optimzed update values request",
+                "de": "Anforderung optimierter Aktualisierungswerte",
+                "ru": "Запрос оптимизированных значений обновления",
+                "pt": "Solicitação de valores de atualização otimizados",
+                "nl": "Geoptimaliseerd verzoek om updatewaarden",
+                "fr": "Demande de valeurs de mise à jour optimisées",
+                "it": "Richiesta valori di aggiornamento ottimizzati",
+                "es": "Solicitud de valores de actualización optimizados",
+                "pl": "Zoptymalizowane żądanie aktualizacji wartości",
+                "zh-cn": "优化的更新值请求"
+            },
             "0.0.4": {
                 "en": "Minor update for code quality",
                 "de": "Kleinere Aktualisierung für die Codequalität",
