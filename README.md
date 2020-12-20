@@ -22,6 +22,9 @@ __Object Channels:__
 
 ## Changelog
 
+### 0.0.5
+* (inapsis) optimzed update values request
+
 ### 0.0.4
 * (inapsis) minor updates for code quality
 
