@@ -87,7 +87,7 @@ class Palazzetti extends utils.Adapter {
                         if (!state.ack && state.val >= 0 && state.val <= 7) {
                             this.palazzettiRequest.setCommand("RFAN+" + String(state.val)).then(function(result) {
                                 this.log.info("set fan level: " + JSON.stringify(result));
-                                this.updateState();
+                                this.updateState(true);
                             }.bind(this)).catch(function(err) {
                                 this.log.error(err);
                             }.bind(this));
@@ -97,7 +97,7 @@ class Palazzetti extends utils.Adapter {
                         if (!state.ack && state.val >= 0 && state.val <= 40) {
                             this.palazzettiRequest.setCommand("SETP+" + String(state.val)).then(function(result) {
                                 this.log.info("set point: " + JSON.stringify(result));
-                                this.updateState();
+                                this.updateState(true);
                             }.bind(this)).catch(function(err) {
                                 this.log.error(err);
                             }.bind(this));
@@ -107,7 +107,7 @@ class Palazzetti extends utils.Adapter {
                         if (!state.ack && state.val >= 0 && state.val <= 5) {
                             this.palazzettiRequest.setCommand("POWR+" + String(state.val)).then(function(result) {
                                 this.log.info("set power: " + JSON.stringify(result));
-                                this.updateState();
+                                this.updateState(true);
                             }.bind(this)).catch(function(err) {
                                 this.log.error(err);
                             }.bind(this));
@@ -117,7 +117,7 @@ class Palazzetti extends utils.Adapter {
                         if (!state.ack && state.val !== null) {
                             this.palazzettiRequest.powerCommand(state.val === false ? 'OFF' : 'ON').then(function(result) {
                                 this.log.info("set on/off: " + JSON.stringify(result));
-                                this.updateState();
+                                this.updateState(true);
                             }.bind(this)).catch(function(err) {
                                 this.log.error(err);
                             }.bind(this));
@@ -137,21 +137,25 @@ class Palazzetti extends utils.Adapter {
     }
 }
 
-Palazzetti.prototype.updateState = function() {
-    let aRequests = [
-        this.palazzettiRequest.getAlls(),
-        this.palazzettiRequest.getTimer(),
-        this.palazzettiRequest.getLabel()
-    ]
+Palazzetti.prototype.updateState = function(onlyValues) {
+    let aRequests = [];
+    aRequests.push(this.palazzettiRequest.getAlls());
+
+    if (!onlyValues) {
+        aRequests.push(this.palazzettiRequest.getTimer());
+        aRequests.push(this.palazzettiRequest.getLabel());
+    }
 
     Promise.all(aRequests).then(
         function(result) {
             try {
-                setObjectStates.StateInfo(this, result[0]);
-                setObjectStates.StateGet(this, result[0]);
-                setObjectStates.StateControl(this, result[0]);
-                setObjectStates.StateTimer(this, result[1]);
-                setObjectStates.StateLabel(this, result[2]);
+                if (!!result[0]) {
+                    setObjectStates.StateInfo(this, result[0]);
+                    setObjectStates.StateGet(this, result[0]);
+                    setObjectStates.StateControl(this, result[0]);
+                }
+                if (!!result[1]) setObjectStates.StateTimer(this, result[1]);
+                if (!!result[2]) setObjectStates.StateLabel(this, result[2]);
             } catch (err) {
                 this.log.error(err);
             }
