@@ -427,7 +427,6 @@
                 "type": "number",
                 "role": "value.valve",
                 "desc": "fan 2 valve level formated",
-                "states": { "0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "High", "7": "Auto" },
                 "read": true,
                 "write": false
             },
@@ -517,6 +516,7 @@
                 "name": "Fan Level",
                 "type": "number",
                 "role": "level.valve",
+                "states": { "0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "High", "7": "Auto" },
                 "desc": "fan level",
                 "read": true,
                 "write": true
