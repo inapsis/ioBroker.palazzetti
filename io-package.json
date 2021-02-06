@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "palazzetti",
-        "version": "0.0.5",
+        "version": "0.0.6",
         "news": {
+            "0.0.6": {
+                "en": "fix fan level state text",
+                "de": "Statustext auf Lüfterebene korrigieren",
+                "ru": "исправить текст состояния уровня вентилятора",
+                "pt": "corrigir texto de estado de nível de fã",
+                "nl": "tekst staat van ventilatorniveau repareren",
+                "fr": "corriger le texte de l'état du niveau du ventilateur",
+                "it": "corretto il testo dello stato a livello di ventola",
+                "es": "corregir el texto del estado del nivel del ventilador",
+                "pl": "napraw tekst stanu na poziomie wentylatora",
+                "zh-cn": "修正风扇等级状态文字"
+            },
             "0.0.5": {
                 "en": "Optimzed update values request",
                 "de": "Anforderung optimierter Aktualisierungswerte",

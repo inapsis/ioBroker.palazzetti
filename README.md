@@ -22,6 +22,9 @@ __Object Channels:__
 
 ## Changelog
 
+### 0.0.6
+* (inapsis) fix fan level state text
+
 ### 0.0.5
 * (inapsis) optimzed update values request
 
