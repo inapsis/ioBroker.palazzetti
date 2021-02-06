@@ -149,19 +149,26 @@ Palazzetti.prototype.updateState = function(onlyValues) {
     Promise.all(aRequests).then(
         function(result) {
             try {
+                var setRequests = [];
                 if (!!result[0]) {
-                    setObjectStates.StateInfo(this, result[0]);
-                    setObjectStates.StateGet(this, result[0]);
-                    setObjectStates.StateControl(this, result[0]);
+                    setRequests.concat(setObjectStates.StateInfo(this, result[0]));
+                    setRequests.concat(setObjectStates.StateGet(this, result[0]));
+                    setRequests.concat(setObjectStates.StateControl(this, result[0]));
                 }
-                if (!!result[1]) setObjectStates.StateTimer(this, result[1]);
-                if (!!result[2]) setObjectStates.StateLabel(this, result[2]);
+                if (!!result[1]) setRequests.concat(setObjectStates.StateTimer(this, result[1]));
+                if (!!result[2]) setRequests.concat(setObjectStates.StateLabel(this, result[2]));
+
+                Promise.all(setRequests).catch(function(err) {
+                    this.log.error(err);
+                }.bind(this));
+
             } catch (err) {
                 this.log.error(err);
             }
-        }.bind(this)).catch(function(error) {
-        this.log.error(error);
-    }.bind(this));
+        }.bind(this)).catch(
+        function(error) {
+            this.log.error(error);
+        }.bind(this));
 
 }
 
