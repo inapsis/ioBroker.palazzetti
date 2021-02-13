@@ -54,6 +54,18 @@
             
             <li class="nav-item" data-level="1"><a href="#welcome-to-iobrokerpalazzetti" class="nav-link">Welcome to ioBroker.palazzetti</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#prerequisites" class="nav-link">Prerequisites</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#adapter-setup" class="nav-link">Adapter Setup</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#adapter-objects-palazzettiinstance-number" class="nav-link">Adapter Objects: palazzetti.{instance number}</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -64,7 +76,308 @@
 <h1 id="welcome-to-iobrokerpalazzetti">Welcome to ioBroker.palazzetti</h1>
 <p><img alt="icon" src="images/palazzetti.png" />
 Visit on <a href="https://github.com/inapsis/ioBroker.palazzetti">GitHub ioBroker.palazzetti</a></p>
-<p><img alt="screenshot" src="images/screenshot.png" /></p></div>
+<p><img alt="screenshot" src="images/screenshot.png" /></p>
+<hr />
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Works with <a href="https://www.google.com/search?client=safari&amp;rls=en&amp;q=connection+box+palazzetti&amp;ie=UTF-8&amp;oe=UTF-8">Palazzetti Connection Box</a></p>
+<hr />
+<h2 id="adapter-setup">Adapter Setup</h2>
+<p><img alt="configuration" src="images/adapter-configuration.png" /></p>
+<table>
+<thead>
+<tr>
+<th align="left">Setting</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">IP Address</td>
+<td align="left">Define local IP address of connection box.</td>
+</tr>
+<tr>
+<td align="left">Port</td>
+<td align="left">Define port number of connection box. Default 80.</td>
+</tr>
+<tr>
+<td align="left">Polling Time</td>
+<td align="left">Define polling time to request current values frequently.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="adapter-objects-palazzettiinstance-number">Adapter Objects: palazzetti.{instance number}</h2>
+<h3 id="channels">Channels</h3>
+<h4 id="info">Info</h4>
+<p>Channel to get system states as read only values.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Datapoint</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">aplts</td>
+<td align="left">Current Date and Time</td>
+</tr>
+<tr>
+<td align="left">fwdate</td>
+<td align="left">Firmware Date</td>
+</tr>
+<tr>
+<td align="left">mac</td>
+<td align="left">MAC Address</td>
+</tr>
+<tr>
+<td align="left">mbtype</td>
+<td align="left">Main Board</td>
+</tr>
+<tr>
+<td align="left">model</td>
+<td align="left">Model</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="left">Name</td>
+</tr>
+<tr>
+<td align="left">ver</td>
+<td align="left">Version</td>
+</tr>
+</tbody>
+</table>
+<h4 id="get">Get</h4>
+<p>Channel to get current states as read only values.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Datapoint</th>
+<th align="left">Description</th>
+<th align="left">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">aplwday</td>
+<td align="left">day of weekday</td>
+<td align="left">1 - 7</td>
+</tr>
+<tr>
+<td align="left">chrstatus</td>
+<td align="left">Timer Status</td>
+<td align="left">0: Timer Off, 1: Timer On</td>
+</tr>
+<tr>
+<td align="left">dp</td>
+<td align="left">Delta Pressure</td>
+<td align="left">&gt;= 0</td>
+</tr>
+<tr>
+<td align="left">dpt</td>
+<td align="left">Target Pressure</td>
+<td align="left">&gt;= 0</td>
+</tr>
+<tr>
+<td align="left">f1rpm</td>
+<td align="left">Fan Exhaust Revolutions Per Minute</td>
+<td align="left">&gt;= 0</td>
+</tr>
+<tr>
+<td align="left">f1v</td>
+<td align="left">Fan Exhaust</td>
+<td align="left">&gt;= 0</td>
+</tr>
+<tr>
+<td align="left">f2lf</td>
+<td align="left">Fan Level</td>
+<td align="left">0 - 7</td>
+</tr>
+<tr>
+<td align="left">f2v</td>
+<td align="left">Fan</td>
+<td align="left">&gt;= 0</td>
+</tr>
+<tr>
+<td align="left">fdr</td>
+<td align="left">Pellet Feed Rate</td>
+<td align="left">0 - 5</td>
+</tr>
+<tr>
+<td align="left">in</td>
+<td align="left">In</td>
+<td align="left">&gt;= 0</td>
+</tr>
+<tr>
+<td align="left">out</td>
+<td align="left">Out</td>
+<td align="left">&gt;= 0</td>
+</tr>
+<tr>
+<td align="left">pqt</td>
+<td align="left">Spent Pellets</td>
+<td align="left">&gt;= 0 in KG</td>
+</tr>
+<tr>
+<td align="left">pump</td>
+<td align="left">Pump Speed</td>
+<td align="left">&gt;= 0</td>
+</tr>
+<tr>
+<td align="left">status</td>
+<td align="left">Current Status</td>
+<td align="left">0: Off, <br>1: Off Timer, <br>2: Test Fire, <br>3: Heat Up, <br>4: Fuel Ignition,<br>5: Ignition Test, <br>6: Burning, <br>9: Cool Fluid, <br>10: Fire Stop, <br>11: Clean Fire, <br>12: Cool</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Error Status</td>
+<td align="left">241: Chimney Alarm, <br>243: Grate Error, <br>244: NTC2 Alarm, <br>245: NTC3 Alarm, <br>247: Door Alarm, <br>248: Press Alarm, <br>249: NTC1 Alarm, <br>250: TC1 Alarm, <br>252: Gas Alarm, <br>253: No Pellet Alarm</td>
+</tr>
+<tr>
+<td align="left">t1</td>
+<td align="left">Temperature Room</td>
+<td align="left">in °C</td>
+</tr>
+<tr>
+<td align="left">t2</td>
+<td align="left">Temperature Return</td>
+<td align="left">in °C</td>
+</tr>
+<tr>
+<td align="left">t3</td>
+<td align="left">Temperature Exhaust</td>
+<td align="left">in °C</td>
+</tr>
+<tr>
+<td align="left">t4</td>
+<td align="left">Temperature Multi Fire</td>
+<td align="left">in °C</td>
+</tr>
+<tr>
+<td align="left">t5</td>
+<td align="left">Temperature Accumulation</td>
+<td align="left">in °C</td>
+</tr>
+</tbody>
+</table>
+<h4 id="control">Control</h4>
+<p>Channel to display and manage current states.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Datapoint</th>
+<th align="left">Description</th>
+<th align="left">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">f2l</td>
+<td align="left">Fan Level</td>
+<td align="left">0 - 5, High, Auto</td>
+</tr>
+<tr>
+<td align="left">onoff</td>
+<td align="left">Turn Power On Off</td>
+<td align="left">true, false</td>
+</tr>
+<tr>
+<td align="left">pwr</td>
+<td align="left">Power Fire Level</td>
+<td align="left">0 - 5</td>
+</tr>
+<tr>
+<td align="left">setp</td>
+<td align="left">Temperature Set Point</td>
+<td align="left">target temperature</td>
+</tr>
+</tbody>
+</table>
+<h4 id="timer">Timer</h4>
+<p>Channel to display timer setting values in json format.</p>
+<ul>
+<li>
+<p>Timer program assignments to a day (maximum of three program assignments possible)</p>
+<pre><code>{
+    "M1:    "OFF" or Program "P1" - "P6",
+    "M2":   "OFF" or Program "P1" - "P6",
+    "M3":   "OFF" or Program "P1" - "P6",
+}
+</code></pre>
+</li>
+<li>
+<p>Timer program settings</p>
+<pre><code>{
+    "CHRSETP":21,       target temperature
+    "START":"05:30",    start time
+    "STOP":"07:15"      end time
+}
+</code></pre>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Datapoint</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">d1</td>
+<td align="left">Timer program assignment on Monday</td>
+</tr>
+<tr>
+<td align="left">d2</td>
+<td align="left">Timer program assignment on Tuesday</td>
+</tr>
+<tr>
+<td align="left">d3</td>
+<td align="left">Timer program assignment on Wednesday</td>
+</tr>
+<tr>
+<td align="left">d4</td>
+<td align="left">Timer program assignment on Thursday</td>
+</tr>
+<tr>
+<td align="left">d5</td>
+<td align="left">Timer program assignment on Friday</td>
+</tr>
+<tr>
+<td align="left">d6</td>
+<td align="left">Timer program assignment on Saturday</td>
+</tr>
+<tr>
+<td align="left">d7</td>
+<td align="left">Timer program assignment on Sunday</td>
+</tr>
+<tr>
+<td align="left">p1</td>
+<td align="left">Timer program "P1"</td>
+</tr>
+<tr>
+<td align="left">p2</td>
+<td align="left">Timer program "P2"</td>
+</tr>
+<tr>
+<td align="left">p3</td>
+<td align="left">Timer program "P3"</td>
+</tr>
+<tr>
+<td align="left">p4</td>
+<td align="left">Timer program "P4"</td>
+</tr>
+<tr>
+<td align="left">p5</td>
+<td align="left">Timer program "P5"</td>
+</tr>
+<tr>
+<td align="left">p6</td>
+<td align="left">Timer program "P6"</td>
+</tr>
+</tbody>
+</table></div>
             </div>
         </div>
 
@@ -148,5 +461,5 @@ Visit on <a href="https://github.com/inapsis/ioBroker.palazzetti">GitHub ioBroke
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2021-02-13 09:56:27.337577+00:00
+Build Date UTC : 2021-02-13 18:05:03.700284+00:00
 -->
