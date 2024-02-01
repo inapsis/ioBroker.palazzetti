@@ -562,6 +562,34 @@
             "native": {}
         },
         {
+            "_id": "control.f3l",
+            "type" : "state",
+            "common": {
+                "name" : "Left Fan Level",
+                "type" : "number",
+                "role": "level.valve",
+                "states": { "0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5"},
+                "desc": "left fan level",
+                "read": true,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id": "control.f4l",
+            "type" : "state",
+            "common": {
+                "name" : "Right Fan Level",
+                "type" : "number",
+                "role": "level.valve",
+                "states": { "0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5"},
+                "desc": "right fan level",
+                "read": true,
+                "write": true
+            },
+            "native": {}
+        },
+        {
             "_id": "timer.p1",
             "type": "state",
             "common": {
