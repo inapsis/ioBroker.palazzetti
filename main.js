@@ -83,6 +83,24 @@ class Palazzetti extends utils.Adapter {
                 // The state was changed
                 //this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
                 switch (id) {
+                    case instanceName + ".control.f3l":
+                        if(!state.ack && state.val >= 0 && state.val <= 5) {
+                            this.palazzettiRequest.setCommand("FN3L+" + String(state.val)).then(function(result) {
+                                this.log.info("set left fan level: " + JSON.stringify(result));
+                                this.updateState(true);
+                            }.bind(this)).catch(function(err) {
+                                this.log.error(err);
+                            }.bind(this));
+                        }
+                    case instanceName + ".control.f4l":
+                        if(!state.ack && state.val >= 0 && state.val <= 5) {
+                            this.palazzettiRequest.setCommand("FN4L+" + String(state.val)).then(function(result) {
+                                this.log.info("set right fan level: " + JSON.stringify(result));
+                                this.updateState(true);
+                            }.bind(this)).catch(function(err) {
+                                this.log.error(err);
+                            }.bind(this));
+                        }
                     case instanceName + ".control.f2l":
                         if (!state.ack && state.val >= 0 && state.val <= 7) {
                             this.palazzettiRequest.setCommand("RFAN+" + String(state.val)).then(function(result) {
