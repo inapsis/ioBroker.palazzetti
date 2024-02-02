@@ -92,6 +92,7 @@ class Palazzetti extends utils.Adapter {
                                 this.log.error(err);
                             }.bind(this));
                         }
+                        break;
                     case instanceName + ".control.f4l":
                         if(!state.ack && state.val >= 0 && state.val <= 5) {
                             this.palazzettiRequest.setCommand("FN4L+" + String(state.val)).then(function(result) {
@@ -101,6 +102,7 @@ class Palazzetti extends utils.Adapter {
                                 this.log.error(err);
                             }.bind(this));
                         }
+                        break;
                     case instanceName + ".control.f2l":
                         if (!state.ack && state.val >= 0 && state.val <= 7) {
                             this.palazzettiRequest.setCommand("RFAN+" + String(state.val)).then(function(result) {
