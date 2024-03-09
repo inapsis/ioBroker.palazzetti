@@ -1,7 +1,7 @@
 {
     "common": {
         "name": "palazzetti",
-        "version": "0.0.6",
+        "version": "0.0.7",
         "news": {
             "0.0.6": {
                 "en": "fix fan level state text",
