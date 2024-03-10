@@ -155,7 +155,7 @@
             "type": "state",
             "common": {
                 "name": "Model",
-                "type": "string",
+                "type": "number",
                 "role": "info.display",
                 "desc": "device model",
                 "read": true,
@@ -206,7 +206,7 @@
             "type": "state",
             "common": {
                 "name": "Version",
-                "type": "string",
+                "type": "number",
                 "role": "info.display",
                 "desc": "device version",
                 "read": true,
