@@ -17,3 +17,5 @@ admin/i18n/*/flat.txt
 
 # documentation files
 site/
+#ignore .commitinfo created by ioBroker release script
+.commitinfo
