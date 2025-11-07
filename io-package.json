@@ -94,6 +94,7 @@
         "extIcon": "https://raw.githubusercontent.com/inapsis/ioBroker.palazzetti/master/admin/palazzetti.png",
         "readme": "https://github.com/inapsis/ioBroker.palazzetti/blob/master/README.md",
         "loglevel": "info",
+        "tier": 2,
         "mode": "daemon",
         "type": "climate-control",
         "compact": true,
