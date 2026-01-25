@@ -81,9 +81,7 @@
             "inapsis <info@inapsis.net>"
         ],
         "keywords": [
-            "ioBroker",
             "template",
-            "Smart Home",
             "home automation"
         ],
         "license": "MIT",
