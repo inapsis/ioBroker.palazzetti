@@ -13,7 +13,7 @@ let pollingInterval;
 var PalazzettiRequest = require('./lib/palazzettiRequest').PalazzettiRequest;
 
 var setObjectStates = require('./lib/palazzettiObjectStateMap');
-const { rejects } = require("assert");
+const { rejects } = require("node:assert");
 
 class Palazzetti extends utils.Adapter {
     /**
