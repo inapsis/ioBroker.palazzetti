@@ -22,6 +22,10 @@ __Object Channels:__
 
 ## Changelog
 
+
+### **WORK IN PROGRESS**
+- (ioBroker-Bot) Adapter requires js-controller >= 6.0.11 now.
+
 ### 0.0.7
 * (inapsis) fix set state error with invalid json
 
